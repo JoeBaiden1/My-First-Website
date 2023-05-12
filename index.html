@@ -1,0 +1,100 @@
+<title>Website</title>
+<div class="background-image">
+    <a href="https://web.roblox.com/home" target="_blank">
+    <button class="btn neon-underline">roblox.com</button></a>
+    <a href="https://discord.com/channels/@me" target="_blank">
+    <button class="btn neon-underline">discord.com</button></a>
+    <a href="https://www.youtube.com/" target="_blank">
+    <button class="btn neon-underline">youtube.com</button></a>
+</div>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  :root {
+    --button-size-x: 1.75vw;
+    --button-size-y: .875vh;
+    --text-size: 6vw;
+    --hover-color: #71b6d6;
+    --neon-color-one: #83c4cf;
+    --neon-color-two: #76c3d6;
+    --neon-glow: 0 0 .1vh var(--neon-color-two),
+                 0 0 .2vh var(--neon-color-two),
+                 0 0 .3vh var(--neon-color-two),
+                 0 0 .5vh var(--neon-color-two),
+                 0 0 .7vh var(--neon-color-two),
+                 0 0 .9vh var(--neon-color-two),
+                 0 0 1.25vh var(--neon-color-two),
+                 0 0 1.5vh var(--neon-color-two);
+  }
+
+  .background-image {
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5vh;
+  }
+
+  .btn {
+    background: transparent;
+    border-width: 0;
+    color: #fff;
+    filter: brightness(105%);
+    font-size: var(--text-size);
+    padding: var(--button-size-y) var(--button-size-x);
+    transition: .475s;
+    position: relative;
+  }
+
+  .neon-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: .5vh;
+    background-color: var(--neon-color-two);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease-out;
+    filter: brightness(105%);
+    box-shadow: var(--neon-glow);
+  }
+
+  .neon-underline:hover::after {
+    transform: scaleX(1);
+  }
+
+  .neon-underline::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: .5vh;
+    background-color: var(--neon-color-one);
+    filter: brightness(105%);
+    box-shadow: 0 0 .1vh var(--neon-color-one);
+    opacity: 0;
+    transition: opacity 0.275s ease-out;
+  }
+
+  .neon-underline:hover::before {
+    opacity: 1;
+  }
+
+  .btn:hover {
+    letter-spacing: .125em;
+    color: var(--hover-color);
+    text-shadow: 0 0 var(--button-size-y) var(--hover-color);
+  }
+</style>
