@@ -1,11 +1,13 @@
 <title>Website</title>
 <div class="background-image">
+  <div class="main-frame">
     <a href="https://web.roblox.com/home" target="_blank">
     <button class="btn neon-underline">roblox.com</button></a>
     <a href="https://discord.com/channels/@me" target="_blank">
     <button class="btn neon-underline">discord.com</button></a>
     <a href="https://www.youtube.com/" target="_blank">
     <button class="btn neon-underline">youtube.com</button></a>
+  </div>
 </div>
 
 <style>
@@ -37,6 +39,21 @@
     background-repeat: no-repeat;
     width: 100vw;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5vh;
+  }
+
+  .main-frame {
+    content: "";
+    backdrop-filter: blur(7.5px);
+    -webkit-backdrop-filter: blur(7.5px);
+    border-radius: 15%;
+    border: 5px solid rgba(255, 255, 255, .66);
+    width: 45%;
+    height: 65%;
     display: flex;
     justify-content: center;
     align-items: center;
